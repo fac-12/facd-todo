@@ -7,6 +7,16 @@ var state = [
   { id: -1, description: 'third todo', done: true },
 ]
 
+var sortOrder = function(a,b) {
+  if (a.description < b.description) {
+    return -1;
+  }
+  if (a.description > b.description) {
+    return 1;
+}
+    return 0;
+}
+
 test('check that to do has been added', function(t){
     var actual = logicFile.addTodo(state, {description: 'fourth todo', done: false});
     var expected = [
@@ -48,3 +58,14 @@ test('markTodo() check that passed array is not equal to the returned one', func
     t.end();
 
 });
+
+
+
+test('check if items are sorted alphabetically by description', function(t) {
+  t.deepEqual(logicFile.sortTodos(state, sortOrder), [
+    { id: -3, description: 'first todo', done: false },
+    { id: -2, description: 'second todo', done: true},
+    { id: -1, description: 'third todo', done: true },
+  ], 'should have description in alphabetical order')
+  t.end();
+})
