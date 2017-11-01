@@ -19,12 +19,17 @@ var todoFunctions = {
   //changes to the new array don't affect the original
   cloneArrayOfObjects: function(todos) {
     return todos.map(function(todo){
-      return JSON.parse(JSON.stringify(object));
+      return JSON.parse(JSON.stringify(todo));
     });
   },
 
-  addTodo: function(todos, newTodo) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+  addTodo: function(todos, newTodo){
+    var copyOfAllTodos = this.cloneArrayOfObjects(todos);
+    var id = this.generateId();
+    newTodo.id = id;
+    copyOfAllTodos.push(newTodo);
+    return copyOfAllTodos;
+    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects).
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
