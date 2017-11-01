@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'first todo', done: false },
+    { id: -2, description: 'second todo', done: false},
+    { id: -1, description: 'third todo', done: false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -20,12 +20,13 @@
     // add span holding description
     var todoText = document.createElement('span');
     todoNode.appendChild(todoText);
-
-    var text = document.createTextNode();
+    var text = document.createTextNode(todo.description);
     todoText.appendChild(text);
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    var deleteButtonText = document.createTextNode('delete');
+    deleteButtonNode.appendChild(deleteButtonText);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -33,9 +34,17 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-
+    var markTodoButton = document.createElement('button');
+    var markTodoButtonText = document.createTextNode('complete');
+    markTodoButton.appendChild(markTodoButtonText);
+    todoNode.appendChild(markTodoButton)
     // add classes for css
-
+    markTodoButton.addEventListener('click', function(event){
+      todoFunctions.markTodo(state, todo.id);
+      todoText.classList.add("completed");
+      todo.done = true;
+      console.log(todo.done)
+    })
     return todoNode;
   };
 
@@ -45,11 +54,12 @@
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-
+      event.preventDefault();
+      console.log(event.target[0].value);
       var description = '?'; // event.target ....
 
       // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(); // ?? change this!
+      var newState = []; // ?? change this!
       update(newState);
     });
   }
