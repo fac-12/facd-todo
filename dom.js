@@ -18,6 +18,11 @@
     // you will need to use addEventListener
 
     // add span holding description
+    var todoText = document.createElement('span');
+    todoNode.appendChild(todoText);
+
+    var text = document.createTextNode();
+    todoText.appendChild(text);
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -44,7 +49,7 @@
       var description = '?'; // event.target ....
 
       // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      var newState = todoFunctions.addTodo(); // ?? change this!
       update(newState);
     });
   }
