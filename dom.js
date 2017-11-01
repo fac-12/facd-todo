@@ -27,11 +27,12 @@
     var deleteButtonNode = document.createElement('button');
     var deleteButtonText = document.createTextNode('delete');
     deleteButtonNode.appendChild(deleteButtonText);
+    todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(deleteButtonNode);
+
 
     // add markTodo button
     var markTodoButton = document.createElement('button');
@@ -41,8 +42,7 @@
     // add classes for css
     markTodoButton.addEventListener('click', function(event){
       todoFunctions.markTodo(state, todo.id);
-      todoText.classList.add("completed");
-      todo.done = true;
+      todoText.classList.toggle("completed");
       console.log(todo.done)
     })
     return todoNode;
