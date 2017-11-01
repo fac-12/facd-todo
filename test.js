@@ -18,3 +18,12 @@ test('check that to do has been added', function(t){
     t.deepEqual(actual, expected, 'should return the todos array with new todo added ');
     t.end();
 })
+
+test('Tape is up and running', function(t) {
+  t.equal(1, 1, 'one should equal one');
+  t.end();
+});
+
+test('check that id is removed from returned array', function(t) {
+  t.deepEqual(logicFile.deleteTodo(state, -3), [{ id: -2, description: 'second todo' }, { id: -1, description: 'third todo' }], 'should return ids');
+  t.end();
