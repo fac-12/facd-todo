@@ -1,0 +1,23 @@
+{
+  "name": "facd-todo",
+  "version": "1.0.0",
+  "description": "Fatimat, Alexis, Caroline &amp; Dragomir week 2 project",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape .test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-12/facd-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-12/facd-todo/issues"
+  },
+  "homepage": "https://github.com/fac-12/facd-todo#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
