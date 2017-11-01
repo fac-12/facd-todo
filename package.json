@@ -4,7 +4,7 @@
   "description": "Fatimat, Alexis, Caroline &amp; Dragomir week 2 project",
   "main": "dom.js",
   "scripts": {
-    "test": "tape .test.js | tap-spec"
+    "test": "tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",
