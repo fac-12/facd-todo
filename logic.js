@@ -64,7 +64,22 @@ var todoFunctions = {
     // this element will have its done value toggled
     // hint: array.map
   },
+
+
+
   sortTodos: function(todos, sortFunction) {
+    var sortOrder = function(a,b) {
+      if (a.description < b.description) {
+        return -1;
+      }
+  if (a.description > b.description) {
+    return 1;
+  }
+  return 0;
+    }
+    return todos.slice().sort(sortOrder);
+
+
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
