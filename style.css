@@ -1,15 +1,71 @@
+body {
+  background-color: rgb(228, 195, 97);
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: rgb(36, 35, 37);
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgb(224, 67, 33);
+  margin-bottom: 0;
+  width: 100%;
+}
 .completed{
     text-decoration: line-through;
+    color:rgb(127, 130, 139);
 }
 
 .todo__List {
   list-style: none;
+  box-sizing: border-box;
+
 }
 
 .container {
   width: 300px;
-  margin: 0 auto;
-  background-color: grey;
+  /*height: 500px;*/
+  margin: 50px auto;
+  background-color: white;
+}
+
+.todoform__input {
+  width: 50%;
+  height: 30px;
+  margin-left: 80px;
+  /*margin-bottom: 0;*/
+  /*padding-bottom: 0;*/
+}
+
+ul {
+  padding-left: 0;
+  /*padding-top: 0;*/
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  height: 40px;
+  line-height: 40px;
+  border-top: 2px solid rgb(89, 168, 218);
+  border-left: rgb(237, 77, 60);
+  padding-left: 80px;
+}
+
+.todo__List__span {
+  padding-right: 20px;
+}
+
+footer {
+  background-color: rgb(89, 168, 218);
+  height: 70px;
+}
+
+.sortId {
+
 }
 
 @media screen and (min-width: 600px){

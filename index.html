@@ -9,17 +9,23 @@
   </head>
   <body>
   <div class="container">
+    <h1>TODO</h1>
+
     <form class="todoform" id="add-todo">
-      <input class="todoform__input" type="text" name="description" value="">
+      <input class="todoform__input" type="text" name="description" value="" placeholder="Get Shit Done">
       <input class="todoform__button" type="submit" name="" value="Submit">
     </form>
     <div id = "todo-container">
         <ul class="todo">
         </ul>
+      </div>
+      <footer>
+          <button class="sort" id="sortId">Sort</button>
+      </footer>
+   </div>
 
-    </div>
-    <button class="sort" id="sortId">Sort</button>
-  </div>
+
+
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>

@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo', done: false },
-    { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false },
+    { id: -3, description: 'Party all night', done: false },
+    { id: -2, description: 'Sleep all day', done: false},
+    { id: -1, description: 'Never grow old', done: false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
