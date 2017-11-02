@@ -69,16 +69,9 @@ var todoFunctions = {
 
 
   sortTodos: function(todos, sortFunction) {
-    var sortOrder = function(a,b) {
-      if (a.description < b.description) {
-        return -1;
-      }
-  if (a.description > b.description) {
-    return 1;
-  }
-  return 0;
-    }
-    return todos.slice().sort(sortOrder);
+
+    var newArray =  todos.slice().sort(sortFunction);
+    return newArray;
 
 
     // stretch goal! Do this last

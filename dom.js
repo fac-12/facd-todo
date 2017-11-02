@@ -58,6 +58,32 @@
     return todoNode;
   };
 
+  // SortButton
+  var sortOrder = function(a,b) {
+    if (a.description < b.description) {
+      return -1;
+    }
+if (a.description > b.description) {
+  return 1;
+}
+return 0;
+  }
+
+  var sortButton = document.getElementById("sortId");
+  sortButton.addEventListener('click', function(event) {
+
+    var newState = todoFunctions.sortTodos(state,sortOrder);
+   console.log(newState);
+    update(newState);
+
+
+    // deleteButtonNode.addEventListener('click', function(event) {
+    //   var newState = todoFunctions.deleteTodo(state, todo.id);
+    //   update(newState);
+
+  });
+
+
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
