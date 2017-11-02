@@ -22,20 +22,22 @@ h1 {
 .todo__List {
   list-style: none;
   box-sizing: border-box;
-
 }
 
 .container {
-  width: 300px;
+  width: 98%;
   /*height: 500px;*/
   margin: 50px auto;
   background-color: white;
 }
-
+.todoform{
+  display: flex;
+}
 .todoform__input {
-  width: 50%;
   height: 30px;
-  margin-left: 80px;
+  margin:0 auto;
+  margin-left: 20px;
+  font-size: 20px;
   /*margin-bottom: 0;*/
   /*padding-bottom: 0;*/
 }
@@ -48,15 +50,12 @@ ul {
 }
 
 li {
-  height: 40px;
+
   line-height: 40px;
   border-top: 2px solid rgb(89, 168, 218);
   border-left: rgb(237, 77, 60);
-  padding-left: 80px;
-}
-
-.todo__List__span {
-  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
 }
 
 footer {
@@ -65,7 +64,10 @@ footer {
   text-align: center;
   padding: 2%;
 }
-
+.todo__List__span{
+  width: 80%;
+  overflow-wrap: break-word;
+}
 .sort {
 width: 8em;
 color: white;
@@ -75,25 +77,25 @@ border-style: none;
 }
 
 .todoform__button{
-    background-color: inherit;
-    border: 0px;
-    font-size: 30px;
-    padding: 0px;
+  background-color: inherit;
+border: 0px;
+font-size: 35px;
+padding-bottom: 0px;
+font-weight: 900;
 }
 .todo__List__button--del, .todo__List__button--mark{
   background-color: inherit;
   border: none;
-  font-size: 30px;
-  float: right;
-  padding-right: 30px;
-
+  font-size: 40px;
 }
 .todo__List__button--del {
   color: red;
+  padding-right: 10px;
   }
 
   .todo__List__button--mark {
     color: green;
+    padding-right: 35px;
   }
 
 .fa-check{
@@ -103,5 +105,18 @@ border-style: none;
 @media screen and (min-width: 600px){
     .container{
       width: 600px;
+    }
+    li{
+      padding-left: 80px;
+    }
+    .todo__List__span {
+      padding-right: 20px;
+    }
+    .todoform__input {
+      width: 50%;
+      height: 30px;
+      margin-left: 80px;
+      /*margin-bottom: 0;*/
+      /*padding-bottom: 0;*/
     }
 }
