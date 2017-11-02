@@ -3,19 +3,23 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>tdd todo</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id = "todo-container">
-        <ul class="todo">
-        </ul>
-    </div>
+  <div class="container">
     <form class="todoform" id="add-todo">
       <input class="todoform__input" type="text" name="description" value="">
       <input class="todoform__button" type="submit" name="" value="Submit">
     </form>
+    <div id = "todo-container">
+        <ul class="todo">
+        </ul>
+
+    </div>
     <button class="sort" id="sortId">Sort</button>
+  </div>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>
