@@ -27,8 +27,8 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    var deleteButtonText = document.createTextNode('delete');
-    deleteButtonNode.appendChild(deleteButtonText);
+    deleteButtonNode.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>'
+  //  deleteButtonNode.appendChild(deleteButtonText);
     todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.setAttribute("class", "todo__List__button--del")
     deleteButtonNode.addEventListener('click', function(event) {
@@ -39,8 +39,8 @@
 
     // add markTodo button
     var markTodoButton = document.createElement('button');
-    var markTodoButtonText = document.createTextNode('complete');
-    markTodoButton.appendChild(markTodoButtonText);
+    markTodoButton.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
+  //  markTodoButton.appendChild(markTodoButtonText);
     todoNode.appendChild(markTodoButton)
     markTodoButton.setAttribute("class", "todo__List__button--mark")
     // add classes for css
