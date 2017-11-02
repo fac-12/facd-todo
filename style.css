@@ -1,6 +1,7 @@
 body {
-  background-color: rgb(228, 195, 97);
-  font-size: 1.5rem;
+  background-color: white;
+  min-height: 100vh;
+  font-size: 2rem;
   font-family: sans-serif;
   color: rgb(36, 35, 37);
 }
@@ -10,9 +11,10 @@ h1 {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgb(224, 67, 33);
+  border-bottom: 2px solid rgba(224, 67, 33, 0.7);
   margin-bottom: 0;
   width: 100%;
+  color: rgb(38, 38, 37);
 }
 .completed{
     text-decoration: line-through;
@@ -25,10 +27,11 @@ h1 {
 }
 
 .container {
-  width: 98%;
+  width: 300px;
   /*height: 500px;*/
   margin: 50px auto;
-  background-color: white;
+  background-image: url(./assets/img/paperbackground.jpg);
+  box-shadow: 0 0 2px rbg(65, 64, 56);
 }
 .todoform{
   display: flex;
@@ -59,7 +62,6 @@ li {
 }
 
 footer {
-  background-color: rgb(89, 168, 218);
   height: 70px;
   text-align: center;
   padding: 2%;
@@ -69,10 +71,10 @@ footer {
   overflow-wrap: break-word;
 }
 .sort {
-width: 8em;
+width: 50%;
 color: white;
 font-size: 1.2em;
-background-color: black;
+background-color: rgb(89, 168, 218);
 border-style: none;
 }
 
