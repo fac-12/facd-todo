@@ -94,16 +94,23 @@ return 0;
       console.log(event.target[0].value);
       var newdescription = event.target[0].value;
 
+
       // event.target ....
       var newObj = {
         description: newdescription
       }
+
+
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, newObj); // ?? change this!
       update(newState);
       console.log(state)
+      document.getElementsByClassName("todoform__input")[0].value = '';
+
     });
+
   }
+
 
   // you should not need to change this function
   var update = function(newState) {
@@ -124,4 +131,5 @@ return 0;
   };
 
   if (container) renderState(state);
+
 })();
