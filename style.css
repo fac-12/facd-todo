@@ -11,6 +11,26 @@
   margin: 0 auto;
   background-color: grey;
 }
+.todoform__button{
+    background-color: inherit;
+    border: 0px;
+    font-size: 30px;
+    padding: 0px;
+}
+.todo__List__button--del, .todo__List__button--mark{
+  border-radius: 100%;
+  border-color: red;
+}
+.deleteButtonNode{
+  width: 1rem;
+
+}
+.markTodoButtonText{
+  width: 1rem;
+}
+.fa-check{
+  width: 9px;
+}
 
 @media screen and (min-width: 600px){
     .container{
