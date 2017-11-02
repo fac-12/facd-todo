@@ -45,7 +45,7 @@
     markTodoButton.setAttribute("class", "todo__List__button--mark")
     // add classes for css
     markTodoButton.addEventListener('click', function(event){
-      todoFunctions.markTodo(state, todo.id);
+      var newState = todoFunctions.markTodo(state, todo.id);
       if(!todoText.classList.contains("completed")){
         todoText.classList.add("completed");
         todo.done = true;
