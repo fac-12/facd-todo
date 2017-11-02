@@ -26,8 +26,7 @@ h1 {
 }
 
 .container {
-  width: 300px;
-  /*height: 500px;*/
+  width: 98%;
   margin: 50px auto;
   background-color: white;
 }
