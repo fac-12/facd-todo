@@ -3,8 +3,8 @@ var logicFile = require('./logic.js');
 
 var state = [
   { id: -3, description: 'first todo', done: false },
-  { id: -2, description: 'second todo', done: true},
-  { id: -1, description: 'third todo', done: true },
+  { id: -2, description: 'second todo', done: false},
+  { id: -1, description: 'third todo', done: false },
 ]
 
 var sortOrder = function(a,b) {
@@ -21,8 +21,8 @@ test('check that to do has been added', function(t){
     var actual = logicFile.addTodo(state, {description: 'fourth todo', done: false});
     var expected = [
       { id: -3, description: 'first todo', done: false },
-      { id: -2, description: 'second todo', done: true},
-      { id: -1, description: 'third todo', done: true },
+      { id: -2, description: 'second todo', done: false},
+      { id: -1, description: 'third todo', done: false },
       {id: 1, description: 'fourth todo', done: false},
     ]
     t.deepEqual(actual, expected, 'should return the todos array with new todo added ');
@@ -35,7 +35,7 @@ test('Tape is up and running', function(t) {
 });
 
 test('check that id is removed from returned array', function(t) {
-  t.deepEqual(logicFile.deleteTodo(state, -3), [{ id: -2, description: 'second todo',done:true }, { id: -1, description: 'third todo',done:true }], 'should return ids');
+  t.deepEqual(logicFile.deleteTodo(state, -3), [{ id: -2, description: 'second todo',done:false }, { id: -1, description: 'third todo',done:false }], 'should return ids');
   t.end();
 });
 
@@ -47,10 +47,9 @@ test('deleteTodo() check that passed array is not equal to the returned one', fu
 
 test('Test if the done property is changed', function(t) {
   t.deepEqual(logicFile.markTodo(state, -3), [{ id: -3, description: 'first todo', done: true },
-  { id: -2, description: 'second todo', done: true},
-  { id: -1, description: 'third todo', done: true }], 'should toggle the property done for the element with id passed as argument');
+  { id: -2, description: 'second todo', done: false},
+  { id: -1, description: 'third todo', done: false }], 'should toggle the property done for the element with id passed as argument');
   t.end();
-
 });
 
 test('markTodo() check that passed array is not equal to the returned one', function(t) {
