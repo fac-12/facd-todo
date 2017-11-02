@@ -62,11 +62,18 @@ li {
 footer {
   background-color: rgb(89, 168, 218);
   height: 70px;
+  text-align: center;
+  padding: 2%;
 }
 
-.sortId {
-
+.sort {
+width: 8em;
+color: white;
+font-size: 1.2em;
+background-color: black;
+border-style: none;
 }
+
 .todoform__button{
     background-color: inherit;
     border: 0px;
@@ -74,16 +81,21 @@ footer {
     padding: 0px;
 }
 .todo__List__button--del, .todo__List__button--mark{
-  border-radius: 100%;
-  border-color: red;
-}
-.deleteButtonNode{
-  width: 1rem;
+  background-color: inherit;
+  border: none;
+  font-size: 30px;
+  float: right;
+  padding-right: 30px;
 
 }
-.markTodoButtonText{
-  width: 1rem;
-}
+.todo__List__button--del {
+  color: red;
+  }
+
+  .todo__List__button--mark {
+    color: green;
+  }
+
 .fa-check{
   width: 9px;
 }
