@@ -27,6 +27,7 @@ var todoFunctions = {
     var copyOfAllTodos = this.cloneArrayOfObjects(todos);
     var id = this.generateId();
     newTodo.id = id;
+    newTodo.done = false;
     copyOfAllTodos.push(newTodo);
     return copyOfAllTodos;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects).
