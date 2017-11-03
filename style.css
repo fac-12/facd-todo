@@ -41,7 +41,7 @@ body {
   padding-left: 2%;
   height: 50px;
   margin: 0 auto;
-  /*margin-left: 20px;*/
+  margin-left: 4%;
   font-size: 20px;
   font-style: italic;
   max-width: 73%;
@@ -62,7 +62,8 @@ body {
   margin-bottom: 0;
 }
 ul{
-  margin: 0
+  margin: 0;
+  padding-left: 0;
 }
 .todo__List {
   line-height: 50px;
@@ -75,6 +76,7 @@ ul{
 .todo__List__span {
   width: 80%;
   overflow-wrap: break-word;
+  padding-left: 5%;
 }
 
 .todo__List__button--del, .todo__List__button--mark {
@@ -127,14 +129,15 @@ ul{
     font-size: 1.8rem;
   }
   .container {
-    width: 600px;
+    max-width: 600px;
+
   }
   h1 {
     font-size: 3rem;
     font-weight: 400;
   }
   li {
-    padding-left: 80px;
+    padding-left: 6%;
   }
   .todo__List__span {
     padding-right: 20px;
@@ -142,7 +145,8 @@ ul{
   .todoform__input {
     width: 63%;
     height: 50px;
-    margin-left: 12%;
+    margin-left: 10%;
+
   }
   .todoform__button {
     padding-right: 2.3rem;
