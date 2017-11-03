@@ -17,6 +17,11 @@ var sortOrder = function(a,b) {
     return 0;
 }
 
+test('Tape is up and running', function(t) {
+  t.equal(1, 1, 'one should equal one');
+  t.end();
+});
+
 test('check that to do has been added', function(t){
     var actual = logicFile.addTodo(state, {description: 'fourth todo', done: false});
     var expected = [
@@ -29,31 +34,35 @@ test('check that to do has been added', function(t){
     t.end();
 });
 
-test('Tape is up and running', function(t) {
-  t.equal(1, 1, 'one should equal one');
-  t.end();
-});
 
 test('check that id is removed from returned array', function(t) {
-  t.deepEqual(logicFile.deleteTodo(state, -3), [{ id: -2, description: 'second todo',done:false }, { id: -1, description: 'third todo',done:false }], 'should return ids');
+  var actual = logicFile.deleteTodo(state, -3);
+  var expected =  [{ id: -2, description: 'second todo',done:false }, { id: -1, description: 'third todo',done:false }];
+  t.deepEqual(actual,expected, 'should return ids');
   t.end();
 });
 
 test('deleteTodo() check that passed array is not equal to the returned one', function(t) {
-    t.notEqual(logicFile.deleteTodo(state,-3),state,"The arrays should npt be the same");
+    var actual = logicFile.deleteTodo(state,-3);
+    var expected = state;
+    t.notEqual(actual,expected,"The arrays should npt be the same");
     t.end();
 
 });
 
 test('Test if the done property is changed', function(t) {
-  t.deepEqual(logicFile.markTodo(state, -3), [{ id: -3, description: 'first todo', done: true },
+  var actual = logicFile.markTodo(state, -3);
+  var expected = [{ id: -3, description: 'first todo', done: true },
   { id: -2, description: 'second todo', done: false},
-  { id: -1, description: 'third todo', done: false }], 'should toggle the property done for the element with id passed as argument');
+  { id: -1, description: 'third todo', done: false }];
+  t.deepEqual(actual, expected, 'should toggle the property done for the element with id passed as argument');
   t.end();
 });
 
 test('markTodo() check that passed array is not equal to the returned one', function(t) {
-    t.notEqual(logicFile.markTodo(state,-2),state,"The arrays should npt be the same");
+    var actual = logicFile.markTodo(state,-2);
+    var expected = state;
+    t.notEqual(actual,expected,"The arrays should npt be the same");
     t.end();
 
 });
@@ -61,20 +70,28 @@ test('markTodo() check that passed array is not equal to the returned one', func
 
 
 test('check if items are sorted alphabetically by description', function(t) {
-  t.deepEqual(logicFile.sortTodos(state, sortOrder), [
+  var actual = logicFile.sortTodos(state, sortOrder);
+  var expected = [
     { id: -3, description: 'first todo', done: false },
     { id: -2, description: 'second todo', done: false},
     { id: -1, description: 'third todo', done: false }
-  ], 'should have description in alphabetical order');
-  t.deepEqual(logicFile.sortTodos([
+  ];
+  t.deepEqual(actual, expected, 'should have description in alphabetical order');
+  t.end();
+});
+
+test('check if items are sorted alphabetically by description', function(t) {
+  var actual = logicFile.sortTodos([
     { id: -2, description: 'second todo', done: false},
     { id: -1, description: 'third todo', done: false },
     { id: -3, description: 'first todo', done: false }
 
-  ], sortOrder), [
+  ], sortOrder);
+  var expected = [
     { id: -3, description: 'first todo', done: false },
     { id: -2, description: 'second todo', done: false},
     { id: -1, description: 'third todo', done: false }
-  ], 'should have description in alphabetical order');
+  ];
+  t.deepEqual(actual, expected, 'should have description in alphabetical order');
   t.end();
-})
+});
