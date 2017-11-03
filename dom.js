@@ -31,6 +31,7 @@
   //  deleteButtonNode.appendChild(deleteButtonText);
     todoNode.appendChild(deleteButtonNode);
     deleteButtonNode.setAttribute("class", "todo__List__button--del")
+    deleteButtonNode.setAttribute('aria-label','Delete button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -40,9 +41,9 @@
     // add markTodo button
     var markTodoButton = document.createElement('button');
     markTodoButton.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i>';
-  //  markTodoButton.appendChild(markTodoButtonText);
     todoNode.appendChild(markTodoButton)
     markTodoButton.setAttribute("class", "todo__List__button--mark")
+    markTodoButton.setAttribute('aria-label','Complete button');
     // add classes for css
     markTodoButton.addEventListener('click', function(event){
       var newState = todoFunctions.markTodo(state, todo.id);
@@ -53,7 +54,6 @@
         todoText.classList.remove("completed");
         todo.done = false;
       }
-      console.log(todo.done)
     })
     return todoNode;
   };
@@ -63,14 +63,9 @@
   var sortButton = document.getElementById("sortId");
   sortButton.addEventListener('click', function(event) {
 
-    var newState = todoFunctions.sortTodos(state,todoFunctions.sortOrder);
-   console.log(newState);
+   var newState = todoFunctions.sortTodos(state,todoFunctions.sortOrder);
     update(newState);
 
-
-    // deleteButtonNode.addEventListener('click', function(event) {
-    //   var newState = todoFunctions.deleteTodo(state, todo.id);
-    //   update(newState);
 
   });
 
@@ -82,7 +77,6 @@
       // what does event.preventDefault do?
       // what is inside event.target?
       event.preventDefault();
-      console.log(event.target[0].value);
       var newdescription = event.target[0].value;
 
 
@@ -95,7 +89,6 @@
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, newObj); // ?? change this!
       update(newState);
-      console.log(state)
       document.getElementsByClassName("todoform__input")[0].value = '';
 
     });
