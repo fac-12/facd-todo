@@ -1,20 +1,28 @@
 body {
   background-color: white;
   min-height: 100vh;
-  font-size: 2rem;
-  font-family: sans-serif;
-  color: rgb(36, 35, 37);
+  font-size: 1.2rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(43, 40, 41);
 }
 
 h1 {
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 2rem;
+  text-shadow: 3px 3px 4px white;
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid rgba(224, 67, 33, 0.7);
   margin-bottom: 0;
   width: 100%;
-  color: rgb(38, 38, 37);
+  color:rgb(43, 40, 41);
+}
+/*take out?*/
+input[type=text] {
+    border: none;
+    border-radius: 4px;
+    padding-left: 2%;
 }
 .completed{
     text-decoration: line-through;
@@ -31,32 +39,33 @@ h1 {
   /*height: 500px;*/
   margin: 50px auto;
   background-image: url(./assets/img/paperbackground.jpg);
-  box-shadow: 0 0 2px rbg(65, 64, 56);
+  -webkit-box-shadow: 4px 6px 14px 0px rgba(191,181,191,1);
+  -moz-box-shadow: 4px 6px 14px 0px rgba(191,181,191,1);
+  box-shadow: 4px 6px 14px 0px rgba(191,181,191,1);
 }
 .todoform{
   display: flex;
 }
 .todoform__input {
-  height: 30px;
+  height: 50px;
   margin:0 auto;
-  margin-left: 20px;
+  /*margin-left: 20px;*/
   font-size: 20px;
-  /*margin-bottom: 0;*/
-  /*padding-bottom: 0;*/
+  font-style: italic;
+  max-width: 73%;
+
 }
 
 ul {
   padding-left: 0;
-  /*padding-top: 0;*/
   margin-top: 0;
   margin-bottom: 0;
 }
 
 li {
 
-  line-height: 40px;
+  line-height: 50px;
   border-top: 2px solid rgb(89, 168, 218);
-  border-left: rgb(237, 77, 60);
   padding-left: 20px;
   display: flex;
 }
@@ -71,19 +80,27 @@ footer {
   overflow-wrap: break-word;
 }
 .sort {
-width: 50%;
+font-family: 'Roboto Condensed', sans-serif;
+width: 35%;
 color: white;
 font-size: 1.2em;
-background-color: rgb(89, 168, 218);
+margin-top: 2%;
+background-color: rgba(89, 168, 218,0.7);
 border-style: none;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 10px;
 }
 
 .todoform__button{
-  background-color: inherit;
+background-color: inherit;
 border: 0px;
-font-size: 35px;
-padding-bottom: 0px;
+font-size: 2.5rem;
+
+padding-bottom: 3px;
+padding-right: 0.8rem;
 font-weight: 900;
+
 }
 .todo__List__button--del, .todo__List__button--mark{
   background-color: inherit;
@@ -91,12 +108,13 @@ font-weight: 900;
   font-size: 40px;
 }
 .todo__List__button--del {
-  color: red;
+  color: rgb(224, 67, 33);
   padding-right: 10px;
+
   }
 
   .todo__List__button--mark {
-    color: green;
+    color: rgb(89, 168, 218);;
     padding-right: 35px;
   }
 
@@ -104,10 +122,24 @@ font-weight: 900;
   width: 9px;
 }
 
+
+
+
+
 @media screen and (min-width: 600px){
+    body {
+      font-size: 1.8rem;
+    }
+
     .container{
       width: 600px;
     }
+     h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      
+     }
+
     li{
       padding-left: 80px;
     }
@@ -115,10 +147,23 @@ font-weight: 900;
       padding-right: 20px;
     }
     .todoform__input {
-      width: 50%;
-      height: 30px;
-      margin-left: 80px;
-      /*margin-bottom: 0;*/
-      /*padding-bottom: 0;*/
+      width: 63%;
+      height: 50px;
+      margin-left: 12%;
     }
+
+    .todoform__button {
+      padding-right: 2.3rem;
+      color: rgba(43, 40, 41, 0.9);
+    }
+
+    .todo__List__button--del {
+      color: rgb(224, 67, 33);
+      padding-right: 20px;
+      }
+
+      .todo__List__button--mark {
+        color: rgb(89, 168, 218);;
+        padding-right: 60px;
+      }
 }

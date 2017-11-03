@@ -7,8 +7,8 @@
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'Party all night', done: false },
-    { id: -2, description: 'Sleep all day', done: false},
+    { id: -3, description: 'Sleep all day', done: false },
+    { id: -2, description: 'Party all night', done: false},
     { id: -1, description: 'Never grow old', done: false },
   ]; // this is our initial todoList
 
