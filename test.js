@@ -63,8 +63,18 @@ test('markTodo() check that passed array is not equal to the returned one', func
 test('check if items are sorted alphabetically by description', function(t) {
   t.deepEqual(logicFile.sortTodos(state, sortOrder), [
     { id: -3, description: 'first todo', done: false },
-    { id: -2, description: 'second todo', done: true},
-    { id: -1, description: 'third todo', done: true },
-  ], 'should have description in alphabetical order')
+    { id: -2, description: 'second todo', done: false},
+    { id: -1, description: 'third todo', done: false }
+  ], 'should have description in alphabetical order');
+  t.deepEqual(logicFile.sortTodos([
+    { id: -2, description: 'second todo', done: false},
+    { id: -1, description: 'third todo', done: false },
+    { id: -3, description: 'first todo', done: false }
+
+  ], sortOrder), [
+    { id: -3, description: 'first todo', done: false },
+    { id: -2, description: 'second todo', done: false},
+    { id: -1, description: 'third todo', done: false }
+  ], 'should have description in alphabetical order');
   t.end();
 })

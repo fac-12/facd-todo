@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.97% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/28</span>
+        <span class='fraction'>32/33</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.97% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>28/28</span>
+        <span class='fraction'>32/33</span>
       </div>
     </div>
   </div>
@@ -123,17 +123,7 @@
 78
 79
 80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+81</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -142,14 +132,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -197,16 +187,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -232,15 +212,15 @@ var state = [
   { id: -1, description: 'third todo', done: false },
 ]
 &nbsp;
-// var sortOrder = function(a,b) {
-//   if (a.description &lt; b.description) {
-//     return -1;
-//   }
-//   if (a.description &gt; b.description) {
-//     return 1;
-// }
-//     return 0;
-// }
+var sortOrder = function(a,b) {
+  if (a.description &lt; b.description) {
+    return -1;
+  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (a.description &gt; b.description) {
+    return 1;
+}
+<span class="cstat-no" title="statement not covered" >    return 0;</span>
+}
 &nbsp;
 test('check that to do has been added', function(t){
     var actual = logicFile.addTodo(state, {description: 'fourth todo', done: false});
@@ -286,30 +266,20 @@ test('markTodo() check that passed array is not equal to the returned one', func
 &nbsp;
 &nbsp;
 test('check if items are sorted alphabetically by description', function(t) {
-  t.deepEqual(logicFile.sortTodos(state, logicFile.sortOrder), [
+  t.deepEqual(logicFile.sortTodos(state, sortOrder), [
     { id: -3, description: 'first todo', done: false },
     { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false}
+    { id: -1, description: 'third todo', done: false }
   ], 'should have description in alphabetical order');
   t.deepEqual(logicFile.sortTodos([
     { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false},
+    { id: -1, description: 'third todo', done: false },
     { id: -3, description: 'first todo', done: false }
 &nbsp;
-  ], logicFile.sortOrder), [
+  ], sortOrder), [
     { id: -3, description: 'first todo', done: false },
     { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false}
-  ], 'should have description in alphabetical order');
-  t.deepEqual(logicFile.sortTodos([
-    { id: -3, description: 'first todo', done: false },
-    { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false}
-&nbsp;
-  ], logicFile.sortOrder), [
-    { id: -3, description: 'first todo', done: false },
-    { id: -2, description: 'second todo', done: false},
-    { id: -1, description: 'third todo', done: false}
+    { id: -1, description: 'third todo', done: false }
   ], 'should have description in alphabetical order');
   t.end();
 })
@@ -319,7 +289,7 @@ test('check if items are sorted alphabetically by description', function(t) {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Nov 03 2017 11:29:52 GMT+0000 (GMT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Nov 03 2017 11:51:53 GMT+0000 (GMT)
 </div>
 </div>
 <script src="../prettify.js"></script>
