@@ -35,7 +35,7 @@ input[type=text] {
 }
 
 .container {
-  width: 300px;
+  width: 97%;
   /*height: 500px;*/
   margin: 50px auto;
   background-image: url(./assets/img/paperbackground.jpg);
@@ -137,7 +137,7 @@ font-weight: 900;
      h1 {
       font-size: 3rem;
       font-weight: 400;
-      
+
      }
 
     li{
